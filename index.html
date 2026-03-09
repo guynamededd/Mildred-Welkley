@@ -1,2 +1,170 @@
-Mildred Welkley 
-Thank you for your patience 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Information</title>
+    <style>
+        :root {
+            --body-bg: #F3E5F5;
+            --container-bg: #ffffff;
+            --text-main: #212121;
+            --primary-lilac: #9575CD;
+            --light-lilac-box: #E1BEE7;
+            --emergency-red: #C62828;
+            --tab-bg: #F8F4F9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            background: var(--container-bg);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(149, 117, 205, 0.2);
+            text-align: center;
+        }
+
+        h1 { font-size: 1.5rem; color: var(--primary-lilac); margin-bottom: 10px; }
+        p { line-height: 1.5; font-size: 1.05rem; margin-bottom: 12px; }
+
+        .tips-box {
+            text-align: left;
+            background-color: var(--light-lilac-box);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid var(--primary-lilac);
+        }
+
+        .tips-box ul { padding-left: 20px; margin: 0; }
+        .tips-box li { margin-bottom: 8px; font-size: 1rem; }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        .btn-call { background-color: var(--emergency-red); color: white; }
+
+        /* Accordion Tab Styling */
+        .family-tab {
+            margin-top: 20px;
+            border: 1px solid var(--light-lilac-box);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tab-header {
+            background-color: var(--tab-bg);
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary-lilac);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background: white;
+            text-align: left;
+            border-top: 1px solid var(--light-lilac-box);
+        }
+
+        .sibling-contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px line #eee;
+        }
+
+        .sibling-contact:last-child { border-bottom: none; }
+
+        .call-icon-btn {
+            background: var(--primary-lilac);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-note { font-size: 0.85rem; color: #616161; margin-top: 25px; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Thank You for Your Patience</h1>
+    
+    <p>My mother has dementia. She may occasionally seem confused or take longer to respond.</p>
+    
+    <div class="tips-box">
+        <strong>How you can help:</strong>
+        <ul>
+            <li>Please speak clearly and slowly.</li>
+            <li>Give her a moment to process questions.</li>
+            <li>Maintain eye contact.</li>
+        </ul>
+    </div>
+
+    <p><strong>Primary Caretaker (Sister):</strong></p>
+    <a href="tel:0000000000" class="btn btn-call">Call Primary Contact</a>
+
+    <div class="family-tab">
+        <button class="tab-header" onclick="toggleTab()">
+            <span>Other Family Contacts</span>
+            <span id="tab-arrow">▼</span>
+        </button>
+        <div id="tab-content" class="tab-content">
+            <div class="sibling-contact">
+                <span>Brother (Name)</span>
+                <a href="tel:0000000000" class="call-icon-btn">Call</a>
+            </div>
+            <div class="sibling-contact">
+                <span>Sister (Name)</span>
+                <a href="tel:0000000000" class="call-icon-btn">Call</a>
+            </div>
+        </div>
+    </div>
+
+    <p class="footer-note">Your kindness makes a world of difference.</p>
+</div>
+
+<script>
+    function toggleTab() {
+        var content = document.getElementById("tab-content");
+        var arrow = document.getElementById("tab-arrow");
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            arrow.innerHTML = "▼";
+        } else {
+            content.style.display = "block";
+            arrow.innerHTML = "▲";
+        }
+    }
+</script>
+
+</body>
+</html>
