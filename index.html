@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Information</title>
+    <title>Care & Support Dashboard</title>
     <style>
         :root {
             --body-bg: #F3E5F5;
@@ -22,11 +22,12 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
-            max-width: 400px;
+            max-width: 450px;
+            width: 100%;
             background: var(--container-bg);
             padding: 25px;
             border-radius: 16px;
@@ -34,134 +35,170 @@
             text-align: center;
         }
 
-        h1 { font-size: 1.5rem; color: var(--primary-lilac); margin-bottom: 10px; }
-        p { line-height: 1.5; font-size: 1.05rem; margin-bottom: 12px; }
+        h1 { font-size: 1.4rem; color: var(--primary-lilac); margin-bottom: 5px; }
+        .sub-header { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
 
+        /* Main Tips Box */
         .tips-box {
             text-align: left;
             background-color: var(--light-lilac-box);
             padding: 15px;
             border-radius: 12px;
-            margin: 20px 0;
+            margin-bottom: 20px;
             border-left: 5px solid var(--primary-lilac);
         }
 
-        .tips-box ul { padding-left: 20px; margin: 0; }
-        .tips-box li { margin-bottom: 8px; font-size: 1rem; }
+        .tips-box strong { display: block; margin-bottom: 8px; color: #4A148C; }
+        .tips-box ul { padding-left: 20px; margin: 0; font-size: 0.95rem; }
+        .tips-box li { margin-bottom: 6px; }
 
+        /* Buttons */
         .btn {
             display: block;
             text-decoration: none;
-            padding: 16px;
+            padding: 15px;
             border-radius: 10px;
             font-weight: bold;
             font-size: 1.1rem;
-            margin-top: 15px;
+            margin-bottom: 10px;
+            transition: transform 0.1s;
         }
-
         .btn-call { background-color: var(--emergency-red); color: white; }
+        .btn-call:active { transform: scale(0.98); }
 
-        /* Accordion Tab Styling */
-        .family-tab {
-            margin-top: 20px;
-            border: 1px solid var(--light-lilac-box);
-            border-radius: 8px;
+        /* Accordion Style Tabs */
+        .tab-wrapper {
+            margin-top: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
             overflow: hidden;
+            text-align: left;
         }
 
         .tab-header {
-            background-color: var(--tab-bg);
-            padding: 12px;
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--primary-lilac);
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--tab-bg);
+            border: none;
+            border-bottom: 1px solid #E0E0E0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: none;
-            width: 100%;
-            font-size: 1rem;
+            font-weight: 600;
+            color: #5E35B1;
+            cursor: pointer;
         }
 
         .tab-content {
             display: none;
             padding: 15px;
             background: white;
-            text-align: left;
-            border-top: 1px solid var(--light-lilac-box);
+            font-size: 0.95rem;
         }
 
-        .sibling-contact {
+        .contact-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px line #eee;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
-
-        .sibling-contact:last-child { border-bottom: none; }
-
-        .call-icon-btn {
+        .contact-row:last-child { border-bottom: none; }
+        
+        .mini-btn {
             background: var(--primary-lilac);
             color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 5px 12px;
+            border-radius: 5px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
-        .footer-note { font-size: 0.85rem; color: #616161; margin-top: 25px; font-style: italic; }
+        .footer-note { font-size: 0.8rem; color: #888; margin-top: 25px; font-style: italic; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>Thank You for Your Patience</h1>
-    
-    <p>My mother has dementia. She may occasionally seem confused or take longer to respond.</p>
+    <p class="sub-header">Information for [Mother's Name]</p>
     
     <div class="tips-box">
-        <strong>How you can help:</strong>
+        <strong>Quick Interaction Tips:</strong>
         <ul>
             <li>Please speak clearly and slowly.</li>
-            <li>Give her a moment to process questions.</li>
-            <li>Maintain eye contact.</li>
+            <li>Give her 20 seconds to process and answer.</li>
+            <li>Maintain eye contact; she responds best to calm voices.</li>
+            <li><strong>Comfort Trigger:</strong> If she's anxious, mention [Favorite Topic, e.g., "her garden"].</li>
         </ul>
     </div>
 
-    <p><strong>Primary Caretaker (Sister):</strong></p>
-    <a href="tel:0000000000" class="btn btn-call">Call Primary Contact</a>
+    <a href="tel:[SisterPhone]" class="btn btn-call">📞 Call Primary Caretaker</a>
 
-    <div class="family-tab">
-        <button class="tab-header" onclick="toggleTab()">
-            <span>Other Family Contacts</span>
-            <span id="tab-arrow">▼</span>
-        </button>
-        <div id="tab-content" class="tab-content">
-            <div class="sibling-contact">
-                <span>Brother (Name)</span>
-                <a href="tel:0000000000" class="call-icon-btn">Call</a>
-            </div>
-            <div class="sibling-contact">
-                <span>Sister (Name)</span>
-                <a href="tel:0000000000" class="call-icon-btn">Call</a>
-            </div>
+    <div class="tab-wrapper">
+        <button class="tab-header" onclick="toggle('family')">Family Contacts <span id="family-arrow">▼</span></button>
+        <div id="family" class="tab-content">
+            <div class="contact-row"><span>Brother: [Name]</span> <a href="tel:[Phone]" class="mini-btn">Call</a></div>
+            <div class="contact-row"><span>Sister: [Name]</span> <a href="tel:[Phone]" class="mini-btn">Call</a></div>
+            <div class="contact-row"><span>Brother: [Name]</span> <a href="tel:[Phone]" class="mini-btn">Call</a></div>
         </div>
     </div>
 
-    <p class="footer-note">Your kindness makes a world of difference.</p>
+    <div class="tab-wrapper">
+        <button class="tab-header" onclick="toggle('routine')">Daily Routine <span id="routine-arrow">▼</span></button>
+        <div id="routine" class="tab-content">
+            <p><strong>Morning:</strong> Breakfast at [Time], Meds at [Time]</p>
+            <p><strong>Afternoon:</strong> Daily walk at [Time]. Prefers [Snack/Drink].</p>
+            <p><strong>Evening:</strong> Dinner at [Time], Wind-down with [Activity].</p>
+        </div>
+    </div>
+
+    <div class="tab-wrapper">
+        <button class="tab-header" onclick="toggle('prefs')">Preferences & Comforts <span id="prefs-arrow">▼</span></button>
+        <div id="prefs" class="tab-content">
+            <p><strong>Favorite Music:</strong> [Artist/Genre]</p>
+            <p><strong>Calming Topics:</strong> [Topic 1, Topic 2]</p>
+            <p><strong>Coffee/Tea:</strong> [Specific order, e.g., Decaf with 1 sugar]</p>
+        </div>
+    </div>
+
+    <div class="tab-wrapper" style="border-color: var(--primary-lilac);">
+        <button class="tab-header" style="background: #EDE7F6;" onclick="unlockMedical()">🔒 Medical Info (Password) <span id="medical-arrow">▼</span></button>
+        <div id="medical" class="tab-content">
+            <p><strong>Hospital:</strong> [Preferred Hospital Name]</p>
+            <p><strong>Physician:</strong> [Dr. Name] - [Phone]</p>
+            <hr>
+            <p><strong>Live Medication List:</strong></p>
+            <iframe src="[YOUR_GOOGLE_SHEET_EMBED_URL_HERE]" style="width:100%; height:250px; border:1px solid #ddd; border-radius:5px;"></iframe>
+        </div>
+    </div>
+
+    <p class="footer-note">Digital Care Card created by her family. Your kindness helps us more than you know.</p>
 </div>
 
 <script>
-    function toggleTab() {
-        var content = document.getElementById("tab-content");
-        var arrow = document.getElementById("tab-arrow");
-        if (content.style.display === "block") {
-            content.style.display = "none";
-            arrow.innerHTML = "▼";
-        } else {
-            content.style.display = "block";
-            arrow.innerHTML = "▲";
+    function toggle(id) {
+        const el = document.getElementById(id);
+        const arrow = document.getElementById(id + '-arrow');
+        const isOpen = el.style.display === "block";
+        el.style.display = isOpen ? "none" : "block";
+        arrow.innerHTML = isOpen ? "▼" : "▲";
+    }
+
+    function unlockMedical() {
+        const el = document.getElementById('medical');
+        if (el.style.display === "block") {
+            el.style.display = "none";
+            document.getElementById('medical-arrow').innerHTML = "▼";
+            return;
+        }
+
+        const pass = prompt("Enter password to view medical data:");
+        if (pass === "family") { // <--- CHANGE THIS PASSWORD
+            el.style.display = "block";
+            document.getElementById('medical-arrow').innerHTML = "▲";
+        } else if (pass !== null) {
+            alert("Incorrect password.");
         }
     }
 </script>
